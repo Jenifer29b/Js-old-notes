@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>z-index Example</title>
+   <style>
+      .box {
+         width: 100px;
+         height: 100px;
+         position: absolute;
+      }
+
+      .box1 {
+         background-color: red;
+         z-index: 1;
+         top: 20px;
+         left: 20px;
+      }
+
+      .box2 {
+         background-color: blue;
+         z-index: 2;
+         top: 40px;
+         left: 40px;
+      }
+
+      .box3 {
+         background-color: green;
+         z-index: 3;
+         top: 60px;
+         left: 60px;
+      }
+
+
+      
+   </style>
+</head>
+
+<body>
+   <div class="box box1"></div>
+   <div class="box box2"></div>
+   <div class="box box3"></div>
+
+   <div style="padding: 300px;">
+   <h1 id="title">Hello, World!</h1>
+   <button id="changeTitle">Change Title</button>
+   </div>
+    <script>
+        try {
+            localStorage.setItem('test', 'Hello, World!');
+            localStorage.setItem('username' , 'johndoe')
+            console.log(localStorage.getItem('test'));
+            console.log(localStorage.getItem('username'))
+        } catch (e) {
+            console.error('LocalStorage access denied:', e);
+        }
+
+         document.getElementById('changeTitle').addEventListener('click', function () {
+               document.getElementById('title').textContent = 'Title Changed!';
+            });
+    </script>
+</body>
+
+</html>
